@@ -14,13 +14,34 @@ public class World {
     public static World currentWorld = null;
     private static long lastTime = System.nanoTime();
     public ArrayList<Sprite> sprites = new ArrayList<Sprite>();
+    public ArrayList<Sprite> addSprites = new ArrayList<Sprite>();
+    public ArrayList<Sprite> removeSprites = new ArrayList<Sprite>();
+
+
     private static BufferedImage backdrop = null;
     public static void update() throws IOException {
         float deltaTime = (System.nanoTime() - lastTime) / Constants.OneSecondNanoSecondFloat;
         lastTime = System.nanoTime();
+
+
         for(Sprite sprite : currentWorld.sprites)   {
             sprite.update(deltaTime);
         }
+
+        for(Sprite sprite : currentWorld.addSprites)   {
+            if(!currentWorld.sprites.contains(sprite))   {
+                currentWorld.sprites.add(sprite);
+            }
+        }
+
+        currentWorld.addSprites.clear();
+
+        for(Sprite sprite : currentWorld.removeSprites)   {
+            if(currentWorld.sprites.contains(sprite))   {
+                currentWorld.sprites.remove(sprite);
+            }
+        }
+        currentWorld.removeSprites.clear();
 
     }
 
@@ -47,6 +68,18 @@ public class World {
 
 
 
+    }
+
+    public void addSprite(Sprite sprite)   {
+        if(!addSprites.contains(sprite))   {
+            addSprites.add(sprite);
+        }
+    }
+
+    public void removeSprite(Sprite sprite)   {
+        if(!removeSprites.contains(sprite))   {
+            removeSprites.remove(sprite);
+        }
     }
 
 

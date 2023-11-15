@@ -33,6 +33,9 @@ public class Renderer {
     private static int currentFps = 0;
     private static int totalFrames = 0;
 
+    public static float camX = 0;
+    public static float camY = 0;
+
 
     private static void getBestSize()   {
          Toolkit toolkit = Toolkit.getDefaultToolkit();
@@ -140,6 +143,9 @@ public class Renderer {
 
 
                     g.fillRect(0, 0, gameWidth, gameHeight);
+
+
+
 
                     //render here
                     try {

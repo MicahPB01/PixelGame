@@ -26,7 +26,7 @@ public class Player extends Mob {
         }
 
     }
-@Override
+
     public void update (float deltaTime)   {
         float moveX = 0;
         float moveY = 0;
@@ -84,37 +84,57 @@ public class Player extends Mob {
 
 
         //do collisions
+        if(doesCollide(posX + moveX * deltaTime, posY))   {
+            moveX -= moveX;
+        }
 
-
-        for(Sprite sprite : World.currentWorld.sprites)   {
-            if(sprite == this)   {
-                continue;
-            }
-
-            Rectangle myRect = new Rectangle((int) (posX + moveX * deltaTime - width / 2), (int) (posY - height / 2), (int) width, (int) height);
-
-
-
-            Rectangle otherRect = new Rectangle((int) (sprite.posX), (int) (sprite.posY),
-                    (int) sprite.width, (int) sprite.height);
-
-            if(myRect.intersects(otherRect))   {
-                moveX -= moveX;
-            }
-
-            myRect = new Rectangle((int) (posX - width / 2), (int) (posY + moveY * deltaTime - height / 2), (int) width, (int) height);
-
-            if(myRect.intersects(otherRect))   {
-                moveY -= moveY;
-            }
+        if(doesCollide(posX, posY + moveY * deltaTime))   {
+            moveY -= moveY;
         }
         //end collisions
+
+    Bucket bucket = new Bucket(posX, posY, 0);
+
+    if(Input.getKeyDown(KeyEvent.VK_M))   {
+        World.currentWorld.addSprite(bucket);
+    }
+
+    if(Input.getKeyUp(KeyEvent.VK_M))   {
+        World.currentWorld.removeSprite(bucket);
+    }
 
 
         posX += moveX * deltaTime;
         posY += moveY * deltaTime;
     }
-@Override
+
+    private boolean doesCollide (float x, float y)   {
+        float myLeft = x - width / 2;
+        float myRight = x + width / 2;
+        float myUp = y - height / 2;
+        float myDown = y + height / 2;
+
+
+        for(Sprite sprite : World.currentWorld.sprites)   {
+
+            if(sprite == this)   {
+                continue;
+            }
+
+            float otherLeft = sprite.posX - width / 2;
+            float otherRight = sprite.posX + width / 2;
+            float otherUp = sprite.posY - sprite.height / 2;
+            float otherDown = sprite.posY + sprite.height / 2;
+
+            if(myLeft < otherRight && myRight > otherLeft && myDown > otherUp && myUp < otherDown)   {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
     public void render (Graphics g)   {
 
         g.drawImage(image, (int) (posX - width / 2), (int) (posY - height / 2), null);

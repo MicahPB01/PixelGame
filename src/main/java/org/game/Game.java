@@ -1,9 +1,11 @@
 package org.game;
 
+import org.gameSounds.SoundPlayer;
 import org.graphics.Renderer;
-import org.object.Fence;
+import org.object.Cow;
+import org.object.Fence.HorizontalFence;
+import org.object.Fence.VerticalFence;
 import org.object.Player;
-import org.test.TestSprite;
 import org.world.World;
 
 import java.awt.image.BufferedImage;
@@ -16,16 +18,22 @@ public class Game {
         Renderer.init();
 
         World.currentWorld = new World();
-        World.currentWorld.sprites.add(new Player(100, 100));
-        //World.currentWorld.sprites.add(new TestSprite(150,150));
-        World.currentWorld.sprites.add(new Fence(200, 200));
+        World.currentWorld.addSprite(new Player(50, 150));
 
-        try   {
-            BufferedImage image = Renderer.loadImage("/Characters/Jeff/Jeff_Default.png");
-        }
-        catch (IOException e)   {
-            e.printStackTrace();
-        }
+
+        World.currentWorld.addSprite(new VerticalFence(150, 50, 6, 50));
+        World.currentWorld.addSprite(new VerticalFence(250, 50, 6, 50));
+
+        //World.currentWorld.addSprite(new HorizontalFence(150, 50, 50, 18));
+        //World.currentWorld.addSprite(new HorizontalFence(200, 50, 50, 18));
+
+
+        SoundPlayer.playBackgroundMusic();
+
+
+        World.currentWorld.addSprite(new Cow(600, 50));
+
+
     }
 
     public static void quit()   {

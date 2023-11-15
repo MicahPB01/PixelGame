@@ -5,7 +5,8 @@ import java.awt.event.KeyListener;
 
 public class Input implements KeyListener {
 
-    private static boolean[] currentKeys = new boolean[128];
+    private static boolean[] lastKeys = new boolean[196];
+    private static boolean[] currentKeys = new boolean[196];
 
 
     public void keyTyped(KeyEvent e) {
@@ -26,5 +27,17 @@ public class Input implements KeyListener {
         return currentKeys[keyCode];
     }
 
+    public static void finishInput()   {
+        lastKeys = currentKeys.clone();
+    }
+
+    public static boolean getKeyDown(int keyCode)   {
+        return currentKeys[keyCode] && !lastKeys[keyCode];
+
+    }
+
+    public static boolean getKeyUp(int keyCode)   {
+        return !currentKeys[keyCode] && lastKeys[keyCode];
+    }
 
 }
