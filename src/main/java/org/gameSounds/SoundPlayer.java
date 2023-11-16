@@ -9,6 +9,8 @@ public class SoundPlayer {
     private static Clip milkClip; // For short milk sound
     private static Clip backgroundMusicClip; // For background music
 
+    private static Clip winClip;
+    private static Clip grumbleClip;
     static {
         try {
             // Load the short milk sound
@@ -22,6 +24,20 @@ public class SoundPlayer {
             AudioInputStream musicAudioInputStream = AudioSystem.getAudioInputStream(musicURL);
             backgroundMusicClip = AudioSystem.getClip();
             backgroundMusicClip.open(musicAudioInputStream);
+
+            // Load the win music
+            URL winURL = SoundPlayer.class.getResource("/Music/Win.wav");
+            AudioInputStream winAudioInputStream = AudioSystem.getAudioInputStream(winURL);
+            winClip = AudioSystem.getClip();
+            winClip.open(winAudioInputStream);
+
+            //load grumble
+            URL grumbleURL = SoundPlayer.class.getResource("/Characters/Grift/Grift_Grumble.wav");
+            AudioInputStream grumbleAudioInputStream = AudioSystem.getAudioInputStream(grumbleURL);
+            grumbleClip = AudioSystem.getClip();
+            grumbleClip.open(grumbleAudioInputStream);
+
+
         } catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
             e.printStackTrace();
         }
@@ -43,6 +59,21 @@ public class SoundPlayer {
     public static void stopBackgroundMusic() {
         if (backgroundMusicClip != null && backgroundMusicClip.isRunning()) {
             backgroundMusicClip.stop();
+        }
+    }
+
+    public static void playWinSound()   {
+        if(winClip != null)   {
+            winClip.setFramePosition(0);
+            winClip.start();
+        }
+    }
+
+    public static void playGriftGrumble()   {
+        if(grumbleClip != null)   {
+           grumbleClip.setFramePosition(0);
+            grumbleClip.start();
+
         }
     }
 }

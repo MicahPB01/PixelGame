@@ -40,18 +40,20 @@ public class Sprite {
         g.drawImage(image, realX, realY, image.getWidth(), image.getHeight(), null);
     }
 
-    public boolean collides(Sprite other) {
-        // Check if the sprites are overlapping
-        if (posX + width > other.posX && posX < other.posX + other.width &&
-                posY + height > other.posY && posY < other.posY + other.height) {
-            // Check if the sprites are solid
-            if (isSolid && other.isSolid) {
-                // The sprites are overlapping and solid, so they are colliding
-                return true;
-            }
-        }
-        // The sprites are not overlapping, so they are not colliding
-        return false;
+    public float getPosX() {
+        return posX;
+    }
+
+    public float getPosY() {
+        return posY;
+    }
+
+    public void setPosX(int x)   {
+        posX = x;
+    }
+
+    public void setPosY(int y)   {
+        posY = y;
     }
 
 

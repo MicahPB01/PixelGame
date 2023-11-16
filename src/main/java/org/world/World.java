@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 import org.constants.Constants;
 import org.graphics.Renderer;
+import org.object.Cow;
+import org.object.Player;
 import org.object.Sprite;
 
 public class World {
@@ -26,6 +28,32 @@ public class World {
 
         for(Sprite sprite : currentWorld.sprites)   {
             sprite.update(deltaTime);
+
+            // Handle interactions between player and cow
+
+            if(sprite instanceof Cow)   {
+                if (sprite.posX < 5) {
+                    sprite.setPosX(Renderer.gameWidth -5);
+                }
+
+                if (sprite.posX > Renderer.gameWidth -5) {
+                    sprite.setPosX(5);
+                }
+            }
+
+            if(sprite instanceof  Player) {
+
+                if (sprite.posX < -2) {
+                    sprite.setPosX(Renderer.gameWidth + 2);
+                }
+
+                if (sprite.posX > Renderer.gameWidth + 2) {
+                    sprite.setPosX(-2);
+                }
+            }
+
+
+
         }
 
         for(Sprite sprite : currentWorld.addSprites)   {
@@ -42,6 +70,10 @@ public class World {
             }
         }
         currentWorld.removeSprites.clear();
+
+
+
+
 
     }
 
@@ -78,7 +110,7 @@ public class World {
 
     public void removeSprite(Sprite sprite)   {
         if(!removeSprites.contains(sprite))   {
-            removeSprites.remove(sprite);
+            removeSprites.add(sprite);
         }
     }
 

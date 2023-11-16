@@ -5,19 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90bab936-89ab-4bd1-854d-ac07f2935a9c" name="Changes" comment="Added improved collisions. Added Moos">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/gameSounds/SoundPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Bucket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Cow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Fence/VerticalFence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Bridge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Damageable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Grift.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/HealthBar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/House.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/River.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Sword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/WinArea.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/world/World2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/graphics/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/graphics/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/input/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/input/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Fence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Fence/HorizontalFence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gameSounds/SoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gameSounds/SoundPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Bucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Bucket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Cow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Cow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Fence/HorizontalFence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Fence/HorizontalFence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Sprite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/world/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Obstacles/Basic_Fence.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Obstacles/Fence/HorizontalFence.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Worlds/Default_World.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Worlds/Default_World.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
