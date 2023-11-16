@@ -1,16 +1,18 @@
-package org.object;
+package org.object.Mobs;
 
 import org.game.Game;
 import org.gameSounds.SoundPlayer;
 import org.graphics.Renderer;
 import org.input.Input;
+import org.object.*;
+import org.object.Items.Bucket;
 import org.world.World;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-public class Cow extends Mob implements  Damageable{
+public class Cow extends Mob implements Damageable {
 
     int timeToFlip = 1000;
     int timeElapsed;

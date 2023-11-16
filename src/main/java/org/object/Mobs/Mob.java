@@ -1,6 +1,8 @@
-package org.object;
+package org.object.Mobs;
 
-public class Mob extends Sprite{
+import org.object.Sprite;
+
+public class Mob extends Sprite {
 
     protected float horizontalSpeed = 50.0f;
     protected float verticalSpeed = 50.0f;

@@ -1,16 +1,16 @@
 // AngryNPC.java
-package org.object;
+package org.object.Mobs;
 
-import org.game.Game;
 import org.gameSounds.SoundPlayer;
 import org.graphics.Renderer;
+import org.object.*;
 import org.world.World;
 
 import java.awt.*;
 import java.io.IOException;
 import java.util.Random;
 
-public class Grift extends Mob implements Damageable{
+public class Grift extends Mob implements Damageable {
 
     private Cow targetCow;
     private int damage = 10;

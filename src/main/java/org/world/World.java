@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 import org.constants.Constants;
 import org.graphics.Renderer;
-import org.object.Cow;
-import org.object.Player;
+import org.object.Mobs.Cow;
+import org.object.Mobs.Player;
 import org.object.Sprite;
 
 public class World {

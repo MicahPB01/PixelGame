@@ -5,25 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90bab936-89ab-4bd1-854d-ac07f2935a9c" name="Changes" comment="Added improved collisions. Added Moos">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Bridge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Damageable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Grift.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/HealthBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/House.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/River.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Sword.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/WinArea.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/world/World2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Door/Door.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Door/Key.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Obstacles/Door/Door_Front.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Obstacles/Door/Door_Side.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/gameSounds/SoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gameSounds/SoundPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Bucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Bucket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Cow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Cow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Fence/HorizontalFence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Fence/HorizontalFence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Sprite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Bridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Bridge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Bucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Items/Bucket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Cow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Mobs/Cow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Fence/HorizontalFence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Fence/HorizontalFence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Fence/VerticalFence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Fence/VerticalFence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Grift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Mobs/Grift.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Mob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Mobs/Mob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Mobs/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/River.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/River.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Sword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Items/Sword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/WinArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/WinArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/world/World.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Worlds/Default_World.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Worlds/Default_World.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,22 +80,25 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2YB0VAJltQYQ7n5YHoifTDneZrs" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/micah/IdeaProjects/PixelTest/src/main/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/micah/IdeaProjects/PixelTest/src/main/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\micah\IdeaProjects\PixelTest\src\main\resources" />
@@ -218,6 +221,7 @@
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First Upload. Sprite collisions created" />
     <MESSAGE value="Added improved collisions. Added Moos" />
     <option name="LAST_COMMIT_MESSAGE" value="Added improved collisions. Added Moos" />

@@ -3,12 +3,17 @@ package org.game;
 import org.gameSounds.SoundPlayer;
 import org.graphics.Renderer;
 import org.object.*;
-import org.object.Fence.HorizontalFence;
-import org.object.Fence.VerticalFence;
+import org.object.Items.Sword;
+import org.object.Mobs.Cow;
+import org.object.Mobs.Player;
+import org.object.Obstacles.Bridge;
+import org.object.Obstacles.Door.Door;
+import org.object.Obstacles.Fence.HorizontalFence;
+import org.object.Obstacles.Fence.VerticalFence;
+import org.object.Mobs.Grift;
+import org.object.Obstacles.House;
+import org.object.Obstacles.River;
 import org.world.World;
-
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 public class Game {
     public static Object quit;
@@ -18,11 +23,12 @@ public class Game {
         Renderer.init();
 
 
-        loadWorldOne();
+        //loadWorldOne();
         //loadWorldTwo();
         //loadWorldThree();
         //loadWorldFour();
         //loadWorldFive();
+        loadWorldSix();
 
     }
 
@@ -40,7 +46,7 @@ public class Game {
         int[] xPoints = {420, 390, 350, 370, 350, 520, 470};
         int[] yPoints = {0, 0, 0, 0, 305, 325, 325};
         int numPoints = 7;
-        Player player = new Player(150, 150, false);
+        Player player = new Player(150, 150, false, false);
 
 
 
@@ -70,7 +76,7 @@ public class Game {
     public static void loadWorldTwo()   {
 
         World.currentWorld = new World();
-        Player player = new Player(150, 150, false);
+        Player player = new Player(150, 150, false, false);
         Cow cow = new Cow(600, 50, player);
         World.currentWorld.addSprite(new HorizontalFence(150, 34, 50, 18));
         World.currentWorld.addSprite(new HorizontalFence(200, 34, 50, 18));
@@ -89,7 +95,7 @@ public class Game {
     public static void loadWorldThree()   {
 
         World.currentWorld = new World();
-        Player player = new Player(150, 150, true);
+        Player player = new Player(150, 150, false, false);
         Cow cow = new Cow(600, 50, player);
         World.currentWorld.addSprite(new HorizontalFence(150, 34, 50, 18));
         World.currentWorld.addSprite(new HorizontalFence(200, 34, 50, 18));
@@ -109,12 +115,13 @@ public class Game {
         World.currentWorld.addSprite(new Grift(20 ,120, cow ));
         World.currentWorld.addSprite(new Grift(20 ,160, cow ));
         World.currentWorld.addSprite(new Grift(20 ,220, cow ));
+        World.currentWorld.addSprite(new Sword(180, 180));
 
     }
 
     public static void loadWorldFour()   {
         World.currentWorld = new World();
-        Player player = new Player(150, 150, true);
+        Player player = new Player(150, 150, true, false);
         Cow cow = new Cow(600, 50, player);
 
         World.currentWorld.addSprite(new HorizontalFence(150, 34, 50, 18));
@@ -173,7 +180,7 @@ public class Game {
 
     public static void loadWorldFive()   {
         World.currentWorld = new World();
-        Player player = new Player(150, 150, true);
+        Player player = new Player(150, 150, true, false);
         Cow cow = new Cow(600, 50, player);
 
         World.currentWorld.addSprite(new HorizontalFence(150, 34, 50, 18));
@@ -212,6 +219,21 @@ public class Game {
         World.currentWorld.addSprite(new WinArea(200, 80, 125, 80));
         World.currentWorld.addSprite(player);
         World.currentWorld.addSprite(cow);
+    }
+
+    public static void loadWorldSix()   {
+        World.currentWorld = new World();
+        Player player = new Player(150, 150, true, true);
+        Cow cow = new Cow(600, 50, player);
+
+        World.currentWorld.addSprite(new Door(200, 200));
+
+
+        World.currentWorld.addSprite(player);
+        World.currentWorld.addSprite(cow);
+
+
+
     }
 
 

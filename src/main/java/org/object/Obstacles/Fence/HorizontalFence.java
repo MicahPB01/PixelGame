@@ -1,4 +1,4 @@
-package org.object;
+package org.object.Obstacles.Fence;
 
 import org.graphics.Renderer;
 import org.object.Sprite;
@@ -6,10 +6,10 @@ import org.object.Sprite;
 import java.awt.*;
 import java.io.IOException;
 
-public class House extends Sprite {
+public class HorizontalFence extends Sprite {
 
 
-    public House(float posX, float posY, float width, float height) {
+    public HorizontalFence(float posX, float posY, float width, float height) {
         super(posX, posY);
 
         this.width = width;
@@ -17,7 +17,7 @@ public class House extends Sprite {
 
 
         try {
-            image = Renderer.loadImage("/Obstacles/House/House_Outside.png");
+            image = Renderer.loadImage("/Obstacles/Fence/HorizontalFence.png");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

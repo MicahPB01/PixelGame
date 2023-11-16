@@ -1,11 +1,12 @@
-package org.object;
+package org.object.Items;
 
 import org.graphics.Renderer;
-import org.input.Input;
+import org.object.Mobs.Player;
+import org.object.Mobs.Grift;
+import org.object.Sprite;
 import org.world.World;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 public class Sword extends Sprite {
@@ -33,19 +34,32 @@ public class Sword extends Sprite {
         // Check if the 'E' key is being held down
 
 
+
+        checkForPickup();
+
+/*
         if (!Input.getKey(KeyEvent.VK_E)) {
             // If 'E' key is released, remove the sword from the world
             this.posY -= 1000;
         }
 
 
+ */
+
     }
 
     public void render(Graphics g) {
         // Render the sword only if it is still in the list of sprites
+/*
+
         if (World.currentWorld.sprites.contains(this)) {
             g.drawImage(image, (int) (posX - width / 2), (int) (posY - height / 2), null);
         }
+
+
+ */
+
+        g.drawImage(image, (int) (posX - width / 2), (int) (posY - height / 2), null);
     }
 
     public void swingSword(Player player) {
@@ -86,6 +100,15 @@ public class Sword extends Sprite {
     private boolean canDamage() {
         // Check if enough time has passed since the last damage
         return System.currentTimeMillis() - lastDamageTime >= damageCooldown;
+    }
+
+    public void checkForPickup()   {
+        for (Sprite sprite : World.currentWorld.sprites) {
+            if (sprite instanceof Player && isCollidingWith(sprite) ) {
+                ((Player) sprite).hasSword = true;
+                World.currentWorld.removeSprite(this);
+            }
+        }
     }
 }
 

@@ -1,14 +1,19 @@
-package org.object;
+package org.object.Mobs;
 
 import org.graphics.Renderer;
 import org.input.Input;
+import org.object.*;
+import org.object.Items.Bucket;
+import org.object.Items.Sword;
+import org.object.Obstacles.Bridge;
+import org.object.Obstacles.River;
 import org.world.World;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-public class Player extends Mob implements  Damageable{
+public class Player extends Mob implements Damageable {
     public static boolean isBucketHeld = false;
     private float prevPosX;
     private float prevPosY;
@@ -17,12 +22,14 @@ public class Player extends Mob implements  Damageable{
     private HealthBar healthBar;
     private Sword sword;
     public boolean hasSword;
+    public boolean hasKey;
     public boolean isGrabbingCow = false;
 
 
-    public Player(float posX, float posY, boolean hasSword) {
+    public Player(float posX, float posY, boolean hasSword, boolean hasKey) {
         super(posX, posY);
         this.hasSword = hasSword;
+        this.hasKey = hasKey;
 
         width = 22;
         height = 30;
@@ -212,14 +219,7 @@ public class Player extends Mob implements  Damageable{
         }
     }
 
-    private void removeSword() {
-        // Check if the player has a sword
-        if (sword != null) {
-            // Remove the sword from the world
-            World.currentWorld.removeSprite(sword);
-            sword = null; // Set the sword to null
-        }
-    }
+
 
     private void handleInput(float deltaTime) {
 
@@ -234,6 +234,8 @@ public class Player extends Mob implements  Damageable{
             sword.swingSword(this);
 
         }
+
+        World.currentWorld.removeSprite(sword);
 
         // Move the sword with the player
         if (sword != null) {

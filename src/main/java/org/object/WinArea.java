@@ -3,8 +3,8 @@ package org.object;
 import java.awt.*;
 
 public class WinArea extends Sprite{
-    int width;
-    int height;
+    public int width;
+    public int height;
     int gameWon = 0;
 
 

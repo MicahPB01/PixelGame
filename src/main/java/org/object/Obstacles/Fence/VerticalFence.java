@@ -1,4 +1,4 @@
-package org.object.Fence;
+package org.object.Obstacles.Fence;
 
 import org.graphics.Renderer;
 import org.object.Sprite;
@@ -6,18 +6,20 @@ import org.object.Sprite;
 import java.awt.*;
 import java.io.IOException;
 
-public class HorizontalFence extends Sprite {
+public class VerticalFence extends Sprite {
 
 
-    public HorizontalFence(float posX, float posY, float width, float height) {
+
+    public VerticalFence(float posX, float posY, float width, float height) {
         super(posX, posY);
 
         this.width = width;
         this.height = height;
 
 
+
         try {
-            image = Renderer.loadImage("/Obstacles/Fence/HorizontalFence.png");
+            image = Renderer.loadImage("/Obstacles/Fence/VerticalFence.png");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -27,8 +29,6 @@ public class HorizontalFence extends Sprite {
 
     public void render(Graphics g) {
         g.drawImage(image, (int) (posX - width / 2), (int) (posY - height / 2), null);
-        g.setColor(Color.GREEN);
-        g.drawRect((int) (posX - width / 2), (int) (posY - height / 2), (int) width, (int) height);
     }
 
 }

@@ -1,17 +1,18 @@
-package org.object;
+package org.object.Items;
 
 import org.graphics.Renderer;
+import org.object.Sprite;
 import org.world.World;
 
 import java.awt.*;
 import java.io.IOException;
 
-public class Bucket extends Sprite   {
+public class Bucket extends Sprite {
     //0 is left, 1 is right
     public int direction = 0;
     public float speed = 0.0f;
-    public float damage = 10.0f;
-    private long spawnTime;
+    public float damage = 1.0f;
+    private final long spawnTime;
     private static final long BUCKET_DURATION = 1_000;
     public Bucket(float posX, float posY, int direction) {
         super(posX, posY);

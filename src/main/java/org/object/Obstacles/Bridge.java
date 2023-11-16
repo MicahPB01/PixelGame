@@ -1,4 +1,6 @@
-package org.object;
+package org.object.Obstacles;
+
+import org.object.Sprite;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

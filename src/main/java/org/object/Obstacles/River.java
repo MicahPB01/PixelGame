@@ -1,4 +1,4 @@
-package org.object;
+package org.object.Obstacles;
 
 import org.object.Sprite;
 
