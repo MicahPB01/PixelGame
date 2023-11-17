@@ -1,55 +1,75 @@
 package org.object.Obstacles.Door;
 
+import org.gameSounds.SoundPlayer;
 import org.graphics.Renderer;
-import org.input.Input;
+import org.object.Mobs.Player;
 import org.object.Sprite;
+import org.world.World;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-public class Key extends Sprite {
+public class Key  extends Sprite {
 
-    private boolean isPickedUp;
+
+    private boolean isPickedUp = false;
+    private int keyHealth = 2;
 
     public Key(float posX, float posY) {
         super(posX, posY);
+
         isPickedUp = false;
-        width = 20;
-        height = 20;
+        width = 7;
+        height = 3;
+        isSolid = false;
 
-        try {
-            image = Renderer.loadImage("/Objects/Key.png");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        try   {
+            image = Renderer.loadImage("/Obstacles/Door/Key.png");
+        }
+        catch(IOException e)   {
+            e.printStackTrace();
         }
     }
 
-    public void update(float deltaTime) {
-        if (!isPickedUp && isPlayerNear()) {
-            // Player is near the key and can pick it up
-            if (Input.getKeyDown(KeyEvent.VK_SPACE)) {
-                isPickedUp = true;
-                // Additional logic when the key is picked up (e.g., play a sound)
+    public void update(float deltaTime)   {
+
+        for(Sprite sprite : World.currentWorld.sprites) {
+            if (sprite instanceof Player) {
+                if (isCollidingWith(sprite) && !isPickedUp) {
+                    isPickedUp = true;
+                    ((Player) sprite).hasKey = true;
+                    SoundPlayer.playKeySound();
+
+                    World.currentWorld.removeSprite(this);
+                }
+
             }
+
+
+
         }
     }
 
-    private boolean isPlayerNear() {
-        float distanceToPlayer = (float) Math.sqrt(
-                Math.pow(posX - Player.getPlayer().getPosX(), 2) +
-                        Math.pow(posY - Player.getPlayer().getPosY(), 2)
-        );
-        return distanceToPlayer < 30; // Adjust this value based on your game's requirements
+    public void render(Graphics g)   {
+        g.drawImage(image, (int) (posX - width / 2), (int) (posY - height / 2), null);
     }
 
-    public boolean isPickedUp() {
-        return isPickedUp;
+    private boolean isCollidingWith(Sprite other) {
+        float myLeft = posX - width / 2;
+        float myRight = posX + width / 2;
+        float myUp = posY - height / 2;
+        float myDown = posY + height / 2;
+
+        float otherLeft = other.posX - other.width / 2;
+        float otherRight = other.posX + other.width / 2;
+        float otherUp = other.posY - other.height / 2;
+        float otherDown = other.posY + other.height / 2;
+
+        return myLeft < otherRight && myRight > otherLeft && myDown > otherUp && myUp < otherDown;
     }
 
-    public void render(Graphics g) {
-        if (!isPickedUp) {
-            g.drawImage(image, (int) (posX - width / 2), (int) (posY - height / 2), null);
-        }
-    }
+
+
+
+
 }

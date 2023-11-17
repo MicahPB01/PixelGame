@@ -4,26 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90bab936-89ab-4bd1-854d-ac07f2935a9c" name="Changes" comment="Added improved collisions. Added Moos">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Door/Door.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Door/Key.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Obstacles/Door/Door_Front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Obstacles/Door/Door_Side.png" afterDir="false" />
+    <list default="true" id="90bab936-89ab-4bd1-854d-ac07f2935a9c" name="Changes" comment="Starting to add doors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Bridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Bridge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Bucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Items/Bucket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Cow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Mobs/Cow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Fence/HorizontalFence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Fence/HorizontalFence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Fence/VerticalFence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Fence/VerticalFence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Grift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Mobs/Grift.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Mob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Mobs/Mob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Mobs/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/River.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/River.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Sword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Items/Sword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/WinArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/WinArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/world/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/world/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gameSounds/SoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gameSounds/SoundPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/graphics/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/graphics/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Mobs/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Mobs/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Door/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Door/Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Door/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Door/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Fence/HorizontalFence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Fence/HorizontalFence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Obstacles/Door/Door_Front.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Obstacles/Door/Door_Front.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Obstacles/Door/Door_Side.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Obstacles/Door/Door_Side.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,13 +208,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700020735301</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Starting to add doors">
+      <created>1700167057160</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700167057160</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First Upload. Sprite collisions created" />
     <MESSAGE value="Added improved collisions. Added Moos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added improved collisions. Added Moos" />
+    <MESSAGE value="Starting to add doors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting to add doors" />
   </component>
 </project>

@@ -27,8 +27,7 @@ public class HorizontalFence extends Sprite {
 
     public void render(Graphics g) {
         g.drawImage(image, (int) (posX - width / 2), (int) (posY - height / 2), null);
-        g.setColor(Color.GREEN);
-        g.drawRect((int) (posX - width / 2), (int) (posY - height / 2), (int) width, (int) height);
+
     }
 
 }

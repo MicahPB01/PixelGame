@@ -10,7 +10,11 @@ public class SoundPlayer {
     private static Clip backgroundMusicClip; // For background music
 
     private static Clip winClip;
+    private static Clip keyClip;
     private static Clip grumbleClip;
+    private static Clip doorOpenClip;
+
+
     static {
         try {
             // Load the short milk sound
@@ -36,6 +40,19 @@ public class SoundPlayer {
             AudioInputStream grumbleAudioInputStream = AudioSystem.getAudioInputStream(grumbleURL);
             grumbleClip = AudioSystem.getClip();
             grumbleClip.open(grumbleAudioInputStream);
+
+            //load key sound
+            URL keyURL = SoundPlayer.class.getResource("/Sounds/Key.wav");
+            AudioInputStream keyAudioInputStream = AudioSystem.getAudioInputStream(keyURL);
+            keyClip = AudioSystem.getClip();
+            keyClip.open(keyAudioInputStream);
+
+            //load door open sound
+            URL doorOpenURL = SoundPlayer.class.getResource("/Sounds/Door_Open.wav");
+            AudioInputStream doorOpenAudioInputStream = AudioSystem.getAudioInputStream(doorOpenURL);
+            doorOpenClip = AudioSystem.getClip();
+            doorOpenClip.open(doorOpenAudioInputStream);
+
 
 
         } catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
@@ -76,4 +93,19 @@ public class SoundPlayer {
 
         }
     }
+
+    public static void playKeySound()   {
+        if(keyClip != null)   {
+            keyClip.setFramePosition(0);
+            keyClip.start();
+        }
+    }
+
+    public static void playDoorOpenSound()   {
+        if(doorOpenClip != null)   {
+            doorOpenClip.setFramePosition(0);
+            doorOpenClip.start();
+        }
+    }
+
 }

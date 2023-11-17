@@ -162,9 +162,6 @@ public class Renderer {
 
                     g.dispose();
 
-
-
-
                     g = canvas.getGraphics();
                     g.drawImage(vImage, 0, 0, canvasWidth, canvasHeight, null);
 

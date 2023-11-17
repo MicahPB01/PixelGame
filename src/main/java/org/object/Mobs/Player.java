@@ -15,6 +15,7 @@ import java.io.IOException;
 
 public class Player extends Mob implements Damageable {
     public static boolean isBucketHeld = false;
+
     private float prevPosX;
     private float prevPosY;
     float playerHealth = 200;
@@ -54,6 +55,9 @@ public class Player extends Mob implements Damageable {
         prevPosY = posY;
 
         handleInput(deltaTime);
+
+
+
 
 
 
@@ -179,6 +183,12 @@ public class Player extends Mob implements Damageable {
         if(sword != null)   {
             sword.render(g);
         }
+
+        if(hasKey)   {
+            g.setColor(Color.GREEN);
+            g.drawRect(50, 50, 50, 50);
+        }
+
     }
 
 

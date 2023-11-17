@@ -8,6 +8,8 @@ import org.object.Mobs.Cow;
 import org.object.Mobs.Player;
 import org.object.Obstacles.Bridge;
 import org.object.Obstacles.Door.Door;
+import org.object.Obstacles.Door.Key;
+import org.object.Obstacles.Door.SideDoor;
 import org.object.Obstacles.Fence.HorizontalFence;
 import org.object.Obstacles.Fence.VerticalFence;
 import org.object.Mobs.Grift;
@@ -223,14 +225,31 @@ public class Game {
 
     public static void loadWorldSix()   {
         World.currentWorld = new World();
-        Player player = new Player(150, 150, true, true);
+        Player player = new Player(150, 200, true, false);
         Cow cow = new Cow(600, 50, player);
 
-        World.currentWorld.addSprite(new Door(200, 200));
+        World.currentWorld.addSprite(new HorizontalFence(150, 34, 50, 18));
+        World.currentWorld.addSprite(new HorizontalFence(200, 34, 50, 18));
+        World.currentWorld.addSprite(new HorizontalFence(250, 34, 50, 18));
+        World.currentWorld.addSprite(new VerticalFence(125, 50 , 6, 50));
+        World.currentWorld.addSprite(new VerticalFence(275, 50 , 6, 50));
+        World.currentWorld.addSprite(new VerticalFence(125, 100 , 6, 50));
+        World.currentWorld.addSprite(new VerticalFence(275, 100 , 6, 50));
+
+        World.currentWorld.addSprite(new HorizontalFence(147, 130, 50, 18));
+        World.currentWorld.addSprite(new HorizontalFence(253, 130, 50, 18));
+        World.currentWorld.addSprite(new HorizontalFence(210, 130, 12, 18));
+
+        World.currentWorld.addSprite(new Door(183, 128));
+        World.currentWorld.addSprite(new Door(205, 128));
+
 
 
         World.currentWorld.addSprite(player);
         World.currentWorld.addSprite(cow);
+        World.currentWorld.addSprite(new Key(100, 150));
+        World.currentWorld.addSprite(new Key(200, 200));
+        World.currentWorld.addSprite(new WinArea(200, 80, 125, 80));
 
 
 
@@ -240,7 +259,6 @@ public class Game {
 
 
     public static void loadNextWorld()   {
-
 
         worldCount++;
 
@@ -258,6 +276,10 @@ public class Game {
                 break;
             case 5:
                 loadWorldFive();
+                break;
+            case 6:
+                loadWorldSix();
+                break;
 
 
             default:
