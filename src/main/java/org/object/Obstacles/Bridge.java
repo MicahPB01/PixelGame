@@ -6,6 +6,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Objects;
 
 public class Bridge extends Sprite {
     private BufferedImage bridgeTexture;
@@ -18,7 +19,7 @@ public class Bridge extends Sprite {
 
         // Load the bridge texture image
         try {
-            bridgeTexture = ImageIO.read(getClass().getResource("/Environment/Bridge/Bridge.png"));
+            bridgeTexture = ImageIO.read(Objects.requireNonNull(getClass().getResource("/Environment/Bridge/Bridge.png")));
         } catch (IOException e) {
             e.printStackTrace();
         }

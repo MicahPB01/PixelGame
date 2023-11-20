@@ -12,7 +12,9 @@ import java.io.IOException;
 public class Sword extends Sprite {
 
     private long lastDamageTime = 0;
-    private long damageCooldown = 500;
+    private long damageCooldown = 2000; // Increase cooldown to 2000 milliseconds (2 seconds)
+    public boolean isVisible = true; // Initial visibility state
+    public boolean hasBeenUsed = false;
 
     public Sword(float posX, float posY) {
         super(posX, posY);
@@ -32,43 +34,34 @@ public class Sword extends Sprite {
     @Override
     public void update(float deltaTime) {
         // Check if the 'E' key is being held down
-
-
-
         checkForPickup();
 
-/*
-        if (!Input.getKey(KeyEvent.VK_E)) {
-            // If 'E' key is released, remove the sword from the world
-            this.posY -= 1000;
+        // Check if the sword should be visible based on cooldown
+        if (System.currentTimeMillis() - lastDamageTime >= damageCooldown) {
+            isVisible = true;
+            hasBeenUsed = false; // Reset the flag when cooldown is over
+        } else {
+            isVisible = false;
         }
-
-
- */
-
     }
 
     public void render(Graphics g) {
-        // Render the sword only if it is still in the list of sprites
-/*
-
-        if (World.currentWorld.sprites.contains(this)) {
+        // Render the sword only if it is still in the list of sprites and is visible
+        if (isVisible) {
             g.drawImage(image, (int) (posX - width / 2), (int) (posY - height / 2), null);
         }
-
-
- */
-
-        g.drawImage(image, (int) (posX - width / 2), (int) (posY - height / 2), null);
     }
 
     public void swingSword(Player player) {
         // Check for collision with Grifts
-        for (Sprite sprite : World.currentWorld.sprites) {
-            if (sprite instanceof Grift && isCollidingWith(sprite) && canDamage()) {
-                Grift grift = (Grift) sprite;
-                grift.takeDamage(25);
-                lastDamageTime = System.currentTimeMillis();
+        if (isVisible) {
+            for (Sprite sprite : World.currentWorld.sprites) {
+                if (sprite instanceof Grift && isCollidingWith(sprite) && !hasBeenUsed) {
+                    Grift grift = (Grift) sprite;
+                    grift.takeDamage(1);
+                    lastDamageTime = System.currentTimeMillis();
+                    hasBeenUsed = true;
+                }
             }
         }
     }
@@ -87,8 +80,6 @@ public class Sword extends Sprite {
         return myLeft < otherRight && myRight > otherLeft && myDown > otherUp && myUp < otherDown;
     }
 
-
-
     public void setPosX(float x) {
         posX = x;
     }
@@ -97,19 +88,16 @@ public class Sword extends Sprite {
         posY = y;
     }
 
-    private boolean canDamage() {
-        // Check if enough time has passed since the last damage
-        return System.currentTimeMillis() - lastDamageTime >= damageCooldown;
-    }
-
-    public void checkForPickup()   {
+    public void checkForPickup() {
         for (Sprite sprite : World.currentWorld.sprites) {
-            if (sprite instanceof Player && isCollidingWith(sprite) ) {
+            if (sprite instanceof Player && isCollidingWith(sprite)) {
                 ((Player) sprite).hasSword = true;
                 World.currentWorld.removeSprite(this);
             }
         }
     }
+
+    public void setVisible(boolean visible) {
+        isVisible = visible;
+    }
 }
-
-

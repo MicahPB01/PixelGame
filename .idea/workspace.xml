@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90bab936-89ab-4bd1-854d-ac07f2935a9c" name="Changes" comment="Starting to add doors">
+    <list default="true" id="90bab936-89ab-4bd1-854d-ac07f2935a9c" name="Changes" comment="Added Keys and Doors">
+      <change afterPath="$PROJECT_DIR$/hs_err_pid19160.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/replay_pid19160.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Door/SideDoor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Obstacles/Door/Key.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/Door_Open.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Sounds/Key.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/gameSounds/SoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gameSounds/SoundPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/graphics/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/graphics/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/input/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/input/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Items/Bucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Items/Bucket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Items/Sword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Items/Sword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Mobs/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Mobs/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Door/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Door/Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Door/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Door/Key.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Fence/HorizontalFence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Fence/HorizontalFence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Bridge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/object/Obstacles/Bridge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Obstacles/Door/Door_Front.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Obstacles/Door/Door_Front.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Obstacles/Door/Door_Side.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Obstacles/Door/Door_Side.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,18 +82,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/micah/IdeaProjects/PixelTest/src/main/resources",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/micah/IdeaProjects/PixelTest/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\micah\IdeaProjects\PixelTest\src\main\resources" />
@@ -215,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700167057160</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added Keys and Doors">
+      <created>1700194924588</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700194924588</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -223,6 +235,7 @@
     <MESSAGE value="First Upload. Sprite collisions created" />
     <MESSAGE value="Added improved collisions. Added Moos" />
     <MESSAGE value="Starting to add doors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting to add doors" />
+    <MESSAGE value="Added Keys and Doors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Keys and Doors" />
   </component>
 </project>

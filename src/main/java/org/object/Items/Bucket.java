@@ -13,6 +13,7 @@ public class Bucket extends Sprite {
     public float speed = 0.0f;
     public float damage = 1.0f;
     private final long spawnTime;
+    private boolean isVisible = false;
     private static final long BUCKET_DURATION = 1_000;
     public Bucket(float posX, float posY, int direction) {
         super(posX, posY);
@@ -49,9 +50,7 @@ public class Bucket extends Sprite {
 
         posX += moveX * deltaTime;
 
-        if(System.currentTimeMillis() - spawnTime >= BUCKET_DURATION)   {
-            World.currentWorld.removeSprite(this);
-        }
+
 
     }
 
@@ -59,8 +58,10 @@ public class Bucket extends Sprite {
 
     public void render (Graphics g)   {
 
-        g.drawImage(image, (int) (posX - width / 2 + 20), (int) (posY - height / 2), null);
-
+        if(!isVisible) {
+            g.drawImage(image, (int) (posX - width / 2 + 20), (int) (posY - height / 2), null);
+            isVisible = true;
+        }
 
 
     }

@@ -115,9 +115,9 @@ public class Player extends Mob implements Damageable {
 
         }
 
-        if (Input.getKeyUp(KeyEvent.VK_M)) {
-            isBucketHeld = false;
-        }
+
+
+
 
         posX += moveX * deltaTime;
         posY += moveY * deltaTime;
@@ -175,19 +175,16 @@ public class Player extends Mob implements Damageable {
 
     public void render(Graphics g) {
         g.drawImage(image, (int) (posX - width / 2), (int) (posY - height / 2), null);
-        g.setColor(Color.GREEN);
-        g.drawRect((int) (posX - width / 2), (int) (posY - height / 2), (int) width, (int) height);
+
+
 
         healthBar.render(g, 20);
 
-        if(sword != null)   {
+        if(sword != null && !sword.hasBeenUsed)   {
             sword.render(g);
         }
 
-        if(hasKey)   {
-            g.setColor(Color.GREEN);
-            g.drawRect(50, 50, 50, 50);
-        }
+
 
     }
 
@@ -220,38 +217,33 @@ public class Player extends Mob implements Damageable {
         return maxHealth;
     }
 
-    private void spawnSword() {
-        // Check if the player already has a sword
-        if (sword == null) {
-            // Spawn a new sword near the player
-            sword = new Sword(posX, posY - 20); // Adjust the position as needed
-            World.currentWorld.addSprite(sword);
-        }
-    }
+
 
 
 
     private void handleInput(float deltaTime) {
-
-
         // Spawn the sword when 'E' is pressed
         if (Input.getKeyDown(KeyEvent.VK_E) && hasSword) {
             if (sword == null) {
                 sword = new Sword(posX, posY);
                 World.currentWorld.addSprite(sword);
             }
-
             sword.swingSword(this);
-
         }
 
-        World.currentWorld.removeSprite(sword);
+        // Make the sword invisible when 'E' is released
+        if (Input.getKeyUp(KeyEvent.VK_E)) {
+            System.out.println("KEY RELEASED");
+            if (sword != null) {
+                sword.setVisible(false);
+
+            }
+        }
 
         // Move the sword with the player
-        if (sword != null) {
+        if (sword != null && sword.isVisible) {
             sword.setPosX(posX + 11);
-            sword.setPosY(posY - 10 );
+            sword.setPosY(posY - 10);
         }
-
     }
 }

@@ -27,10 +27,10 @@ public class Game {
 
         //loadWorldOne();
         //loadWorldTwo();
-        //loadWorldThree();
+        loadWorldThree();
         //loadWorldFour();
         //loadWorldFive();
-        loadWorldSix();
+        //loadWorldSix();
 
     }
 
@@ -97,7 +97,7 @@ public class Game {
     public static void loadWorldThree()   {
 
         World.currentWorld = new World();
-        Player player = new Player(150, 150, false, false);
+        Player player = new Player(150, 150, true, false);
         Cow cow = new Cow(600, 50, player);
         World.currentWorld.addSprite(new HorizontalFence(150, 34, 50, 18));
         World.currentWorld.addSprite(new HorizontalFence(200, 34, 50, 18));
